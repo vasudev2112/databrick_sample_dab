@@ -1,0 +1,22 @@
+bundle:
+  name: my-sample-bundle
+
+# Define where your resource configuration files are located
+include:
+  - resources/*.yml
+
+targets:
+  # Default development target
+  dev:
+    mode: development
+    default: true
+    workspace:
+      host: https://dbc-fa18b081-8b4a.cloud.databricks.com/
+
+  # Production target with stricter controls
+  prod:
+    mode: production
+    workspace:
+      host: https://dbc-fa18b081-8b4a.cloud.databricks.com/
+    # Root path in the workspace for production artifacts
+      root_path: /Workspace/Users/vasudev.yadav21@gmail.com/.bundle/${bundle.name}/${bundle.target}
