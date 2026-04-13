@@ -1,1 +1,8 @@
-print()
+resources:
+  jobs:
+    sample_notebook_job:
+      name: "My Sample Job"
+      tasks:
+        - task_key: run_notebook_task
+          notebook_task:
+            notebook_path: ../src/dev.ipynb
